@@ -1,0 +1,182 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Moshe Beeri</title>
+    <script>
+      loader = () => {
+        populate()
+        automation()
+      }
+      automation = () => {
+        var coll = document.getElementsByClassName('collapsed')
+        var i;
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            console.log('clicked')
+            if( this.classList.contains('collapsed')){
+              this.classList.remove('collapsed')
+              this.classList.add('expended')
+            } else {
+              this.classList.remove('expended')
+              this.classList.add('collapsed')
+            }
+          });
+        }
+      }
+      populate = () => {
+        populate_jobs([
+          {
+            id: 'latest',
+            logo: 'images/msft-logo.png',
+            company: 'Microsoft corporation',
+            position: 'Junior Fullstack Engineer',
+            time: '6/2015 - 7/2020',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut etiam sit amet nisl purus in mollis. Nullam eget felis eget nunc lobortis mattis aliquam. Venenatis urna cursus eget nunc scelerisque viverra. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Risus in hendrerit gravida rutrum quisque non tellus orci ac. Proin fermentum leo vel orci porta non pulvinar neque. Purus sit amet luctus venenatis lectus. Molestie nunc non blandit massa enim nec dui nunc. Eleifend mi in nulla posuere sollicitudin. Venenatis urna cursus eget nunc scelerisque viverra. Augue mauris augue neque gravida in fermentum et sollicitudin ac. At tellus at urna condimentum mattis pellentesque.',
+            technologies: 'Computer Vision, Artificial Intelligence (AI), Connected Retail, Internet of Things, Hyperautomation, Blockchain, Quantum Computing, Mobile First, Voice - as - UI, Multiexperience'
+          },
+          {
+            logo: 'images/amazon-com-logo.png',
+            company: 'Amazon AWS',
+            position: 'Some other job',
+            time: '1/2010 -  2/2015',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut etiam sit amet nisl purus in mollis. Nullam eget felis eget nunc lobortis mattis aliquam. Venenatis urna cursus eget nunc scelerisque viverra. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Risus in hendrerit gravida rutrum quisque non tellus orci ac. Proin fermentum leo vel orci porta non pulvinar neque. Purus sit amet luctus venenatis lectus. Molestie nunc non blandit massa enim nec dui nunc. Eleifend mi in nulla posuere sollicitudin. Venenatis urna cursus eget nunc scelerisque viverra. Augue mauris augue neque gravida in fermentum et sollicitudin ac. At tellus at urna condimentum mattis pellentesque.',
+            technologies: 'Computer Vision, Artificial Intelligence (AI), Connected Retail, Internet of Things, Hyperautomation, Blockchain, Quantum Computing, Mobile First, Voice - as - UI, Multiexperience'
+          }
+
+        ])
+      }
+      populate_jobs = (jobs_data) => {  
+        const jobs = document.getElementById('jobs')   
+        jobs_data.forEach(job_data => {
+          const new_job = document.createElement('div')
+          new_job.className = 'job'
+          console.log(job_data.id || job_data.company)
+          new_job.setAttribute('id', job_data.id || job_data.company );
+          new_job.innerHTML = "<div class='job-logo'>                                        " +
+                              " <img class='company-logo' src="+ job_data.logo+"></img>                              " +               
+                              "</div>                                                                          " +
+                              "<div class='job-description'>                                                   " +
+                              "  <div class='job-title'>                                                       " +
+                              "    <h3 class='company '>"+job_data.company+"</h3>                              " +      
+                              "    <h3 class='position '>"+job_data.position+"</h3>                            " +     
+                              "    <h3 class='time '>"+job_data.time+"</h3>                                    " +
+                              "  </div>                                                                        " +  
+                              "  <p class='collapsed large-collapse'>"+job_data.description +"</p>                                                                          " +                                         
+                              "  <div class='technologies'>                                                    " +                      
+                              "    <p class='collapsed small-collapse'>                                        " +                                  
+                              "      Technologies: "+job_data.technologies+"                                   " +                              
+                              "    </p>                                                                        " +                                                   
+                              "  </div>                                                                        " +                                                    
+                              "</div>                                                                          "                                              
+          jobs.appendChild(new_job)
+        })
+      }
+    </script>      
+  </head>
+  <body onload='loader()'>
+    <div class='header' >
+      <div class='topline'>
+        <img class='logo' src='images/mb_logo.png' alt='Moshe'></img>
+        <h1>Moshe Beeri - Software Engineering</h1>
+      </div>
+      <div class='menu'>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts.html">Posts</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class='experience'>
+      <div class='sidebar' >
+        <h3>Legend</h3>
+        <ul>
+          <li><a href="#latest">2015-Now</a></li>
+          <li><a href="#2010-2015">2010-2015</a></li>
+          <li><a href="#2005-2010">2005-2010</a></li>
+          <li><a href="#2000-2005">2000-2005</a></li>
+          <li><a href="#1997-2000">1997-2000</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#patents">Patents</a></li>
+          <li><a href="#techstack">Tech Stack</a></li>
+        </ul>
+      </div>
+      <div class='resume'>
+        <div id='jobs' class='section'>
+          <h2>Career experience</h2>
+          <div id='jobs' class='section-description'></div>
+        </div>
+        <div class='additional-info'>
+          <div id='education' class='info-area'>
+            <h2>Education</h2>
+            <div id='education' class='section-description'>
+              <div class='job-title'>                                                       
+                  <h3 class='company'>Physics and computer seience</h3>                    
+                  <h3 class='position'>Ben-Gurion University of the Negev</h3>               
+                  <h3 class='time '>1992 – 1996</h3>                                    
+                </div>                                                                       
+            </div>
+            <div id='education' class='section-description'>
+              <div class='job-title'>                                                       
+                  <h3 class='company'>High School deploma</h3>                    
+                  <h3 class='position'>Hadassim</h3>               
+                  <h3 class='time '>1989</h3>                                    
+                </div>                                                                       
+            </div>
+          </div>
+          <div id='education' class='info-area'>
+            <h2>Miletary Sevice</h2>
+            <div id='education' class='section-description'>
+              <div class='job-title'>                                                       
+                  <h3 class='company'>Technological Communication</h3>                    
+                  <h3 class='position'>Master Sergeant - team commander</h3>               
+                  <h3 class='time '>1989-1992</h3>                                    
+                </div>                                                                       
+            </div>
+          </div>
+          <div id='patents' class='info-area'>
+            <h2>Patent</h2>
+            <div id='patents' class='info-sub-area'>
+              <div class='position'>                                                       
+                <h3>Patent issuer and number GB1722044.3</h3>
+              </div>
+              <p class='info-description'>
+                Systems methods and computer readable storage media for enabling decentralized ex-banking accounts with diversified interactable financial service
+              </p>
+            </div>
+          </div>
+          <div id='techstack' class='info-area'>
+            <h2>Full Technological Stack</h2>
+            <div id='techstack' class='section-description'>
+                <div class='technologies'>                                       
+                  <p class='collapsed small-collapse'>                                       
+                    Technologies: 
+ Node.js Javascript & Typescript	AWS & GCP Clouds.
+Python & machine learning using Pandas, SKLearn, NumPy, TPOT	Big Data – Enterprise Technical leader using PySpark, Hive, HDFS etc.
+Deep Learning with TensorFlow	Kafka 
+Conceptual Enterprise architecture	Reactive & Serverless using firebase.
+React & React native.	Agile & CI/CD 
+Solidity & Ethereum.	No-SQL: Neo4J, MongoDB, Redis, couchbaseDB          
+                  </p>                                                                                        
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='footer'>
+      <div class='topline'>
+        <img class='logo-footer' src='images/mb_logo-inverted.png' alt='Moshe'></img>
+        <div class='footer-text'>
+          <div>
+            <h2>Moshe Beeri - Software Engineering © 2020</h2> 
+          </div>
+          <div>
+            <p>For more information contact via <a href="mailto:Moshe.Beeri@gmail.com">Moshe.beeri @ gmail.com</a> or <a href="tel:+972-543133943">+972-543133943</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
