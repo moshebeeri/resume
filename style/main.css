@@ -12,13 +12,17 @@ body {
 }
 
 .header {
+  z-index: 2;
   color:darkblue;
   background-color: #DDD;
   width: 100%;
 }
+
+
 .header h1 {
   margin-left:10px;
 }
+
 .header ul {
   list-style-type: none;
   margin: 0;
@@ -28,22 +32,32 @@ body {
 
 .header ul li {
   float: left;
-  padding: 10px;
+  padding: 0px;
+  margin: 0px;
+  padding-left: 20px;
 }
 
 .topline {
-  margin-left: 30px;
+  margin-left: 0px;
   display: flex;
   flex-direction: row;
 }
 
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .logo {
-  height: 80px;
+  height: 150px;
   margin-right:50px;
 }
 
 .menu {
-margin-left: 150px;
+  align-self: flex-start;
+  margin: 0px;
+  padding:0px;
 }
 
 li a {
@@ -51,7 +65,6 @@ li a {
   display: block;
   text-align: center;
   text-decoration: none;
-  margin-bottom: 10px;
 }
 
 li a:hover {
@@ -84,6 +97,7 @@ a:visited{
 .sidebar li a {
   color:blue;
   text-align:left;
+  margin-bottom: 10px;
 }
 
 .sidebar li a:hover {

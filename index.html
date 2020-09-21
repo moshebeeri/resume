@@ -106,8 +106,8 @@
           new_job.className = 'job'
           console.log(job_data.id || job_data.company)
           new_job.setAttribute('id', job_data.id || job_data.company );
-          new_job.innerHTML = "<div class='job-logo'>                                        " +
-                              " <img class='company-logo' src="+ job_data.logo+"></img>                              " +               
+          new_job.innerHTML = "<div class='job-logo'>                                                          " +
+                              " <img class='company-logo' src="+ job_data.logo+"></img>                        " +               
                               "</div>                                                                          " +
                               "<div class='job-description'>                                                   " +
                               "  <div class='job-title'>                                                       " +
@@ -115,7 +115,7 @@
                               "    <h3 class='position '>"+job_data.position+"</h3>                            " +     
                               "    <h3 class='time '>"+job_data.time+"</h3>                                    " +
                               "  </div>                                                                        " +  
-                              "  <p class='collapsed large-collapse'>"+job_data.description +"</p>                                                                          " +                                         
+                              "  <p class='collapsed large-collapse'>"+job_data.description +"</p>             " +                                         
                               "  <div class='technologies'>                                                    " +                      
                               "    <p class='collapsed small-collapse'>                                        " +                                  
                               "      Technologies: "+job_data.technologies+"                                   " +                              
@@ -131,16 +131,19 @@
     <div class='header' >
       <div class='topline'>
         <img class='logo' src='images/mb_logo.png' alt='Moshe'></img>
-        <h1>Moshe Beeri - Software Engineering</h1>
+        <div class='header-text'>
+          <h1>Moshe Beeri - Software Engineering</h1>
+          <div class='menu'>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="posts.html">Posts</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class='menu'>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="posts.html">Posts</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </div>
+
     </div>
     <div class='experience'>
       <div class='sidebar' >
