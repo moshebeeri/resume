@@ -6,7 +6,7 @@ body {
   background-color: #444444;
   color: #e2eaed;
   margin: 0;
-  height: 4000px;
+  height: 3000px;
   display: flex;
   flex-direction: column;
 }
