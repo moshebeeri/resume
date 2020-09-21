@@ -110,7 +110,6 @@ a:visited{
   justify-content: center;
 }
 
-
 .resume {
   width: 100%;
   height: 100%;
@@ -125,6 +124,10 @@ a:visited{
 }
 
 .section h2 {
+  color: white;
+  text-align: center;
+}
+.section h3 {
   color: white;
   text-align: center;
 }
